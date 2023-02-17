@@ -16,15 +16,23 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name = "인증", description = "인증 관련 api 입니다.")
+@Tag(name = "그외", description = "그외 관련 api 입니다.")
 @RestController
-@RequestMapping("/auth")
-public interface CommonController {
+@RequestMapping("/excom")
+public interface ExComController {
 
-	@Operation(summary = "로그인 메서드", description = "로그인 메서드입니다.")
+	@Operation(summary = "그외 메서드", description = "그외 메서드입니다.")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = Result.class))),
 			@ApiResponse(responseCode = "400", description = "bad request operation", content = @Content(schema = @Schema(implementation = Result.class))) })
-	@PostMapping("/token")
-	public Result getToken(@RequestBody Map<String, String> input);
+	@PostMapping("/dash")
+	public Result getDash(@RequestBody Map<String, String> input);
+	
+	
+	@Operation(summary = "그외 메서드", description = "그외 메서드입니다.")
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = Result.class))),
+			@ApiResponse(responseCode = "400", description = "bad request operation", content = @Content(schema = @Schema(implementation = Result.class))) })
+	@PostMapping("/dash1")
+	public Result getDash1(@RequestBody Map<String, String> input);
 }
