@@ -24,6 +24,7 @@ public class OpenApiConfig {
 	@Bean
 	public GroupedOpenApi group1() {
 		return GroupedOpenApi.builder().group("그룹1").pathsToMatch("/auth/**").build();
+		// .packagesToScan("com.example.swagger").build();
 	}
 
 	@Bean

@@ -26,5 +26,16 @@ public interface CommonController {
 			@ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = Result.class))),
 			@ApiResponse(responseCode = "400", description = "bad request operation", content = @Content(schema = @Schema(implementation = Result.class))) })
 	@PostMapping("/token")
-	public Result getToken(@RequestBody Map<String, String> input);
+	public Result getToken(@io.swagger.v3.oas.annotations.parameters.RequestBody (description = "{\r\n"
+			+ "  \"email\": \"VUP\",\r\n"
+			+ "  \"password\": \"1111\"\r\n"
+			+ "}") @RequestBody Map<String, String> input);
+	
+	/*
+	 *                 content = [Content(
+                    mediaType = "application/json",
+                    schema = Schema(implementation = Long::class),
+                    examples = [ExampleObject(name = "name", value = "1648787755769")]
+                )]
+	 */
 }
