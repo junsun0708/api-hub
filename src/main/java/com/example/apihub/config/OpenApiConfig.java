@@ -1,5 +1,6 @@
 package com.example.apihub.config;
 
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,5 +19,15 @@ public class OpenApiConfig {
 		
 		Info info = new Info().title("테스트").version(springdocVersion).description(sb.toString());
 		return new OpenAPI().components(new Components()).info(info);
+	}
+	
+	@Bean
+	public GroupedOpenApi group1() {
+		return GroupedOpenApi.builder().group("그룹1").pathsToMatch("/auth/**").build();
+	}
+
+	@Bean
+	public GroupedOpenApi group2() {
+		return GroupedOpenApi.builder().group("그룹2").pathsToMatch("/excom/**").build();
 	}
 }
