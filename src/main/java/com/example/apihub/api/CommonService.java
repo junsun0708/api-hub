@@ -13,6 +13,6 @@ public class CommonService implements CommonController {
 	@Override
 	public Result getToken(Map<String, String> input) {
 		HttpUtil.loop(input);
-		return HttpUtil.callApi(RequestMethod.POST, "http://localhost:8080/api/auth/login", input);
+		return HttpUtil.callApi(RequestMethod.POST, "http://10.0.1.11:18181/api/auth/login", input);
 	}
 }

@@ -22,6 +22,10 @@ public class Result {
 	public Result success(Object data) {
 		return setResult(200, "Success", data);
 	}
+	
+	public Result fail(String message) {
+		return setResult(400, message, null);
+	}
 
 	public Result fail(Object data, String message) {
 		return setResult(400, message, data);
